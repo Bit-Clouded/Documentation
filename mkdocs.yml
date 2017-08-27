@@ -1,1 +1,10 @@
-site_name: My Docs
+site_name: BitClouded
+pages:
+  - Home: 'index.md'
+  # - Quick Howtos
+  - Aspects:
+    - 'Best Practices': 'aspects/best-practices.md'
+    - 'Monitoring': 'aspects/monitoring.md'
+    - 'Network Security': 'aspects/network-security.md'
+
+  # - Apps
