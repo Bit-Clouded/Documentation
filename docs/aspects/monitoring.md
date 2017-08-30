@@ -3,6 +3,9 @@
 The monitoring aspect centralises the activation and collection of all logs and metrics into a central location.
 
 ## Logs
+
+All the logs are configured and aggregated in a single template, the [analytics/logs-store](https://github.com/Bit-Clouded/Glenlivet/blob/master/analytics/logs-store.template) template
+
   - CloudWatch Logs
   - CloudConfig Snapshots
   - Application Load Balancer Logs
@@ -15,6 +18,7 @@ The monitoring aspect centralises the activation and collection of all logs and 
   - Linux Docker Logs
 
 ## Metrics
+
   - Linux Memory Utilization
 
 ## CloudWatch Log Agent

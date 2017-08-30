@@ -1,10 +1,6 @@
-site_name: BitClouded
+site_name: BitClouded Infrastructure Framework
 pages:
   - Home: 'index.md'
-  # - Quick Howtos
   - Aspects:
-    - 'Best Practices': 'aspects/best-practices.md'
+    - 'Security': 'aspects/security.md'
     - 'Monitoring': 'aspects/monitoring.md'
-    - 'Network Security': 'aspects/network-security.md'
-
-  # - Apps
