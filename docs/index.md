@@ -17,14 +17,14 @@ Throughout the entire process of building this framework, for me, the founder of
     So that what I build can be perfect
     and that I would have to do less work?....
 
-And that's where the journey began. Funny thing is, the framework is still not perfect. Ammount of work I'm doing only have increased as I find more and more best practices and effecient technology to incorporate that I ended up deciding to run a company in order to build it properly.... Oh well.
+And that's where the journey began. Funny thing is, the framework is still not perfect. Ammount of work I'm doing only have increased as I find more and more best practices and effecient technology to incorporate. So much so that I ended up deciding to run a company in order to build it properly.
 
 And with the paradigm of "Infrastructure as Code" maybe I should open source it? Yeah let's do it.
 
     So that everyone's infrastructure can be perfect
     And that everyone can do less work
 
-We'll get there, together, and at least what I know is we are far closer than anyone I know of.
+We'll get there, together, and at least we are far closer than anyone I know of.
 
 ## What Is It?
 
@@ -41,3 +41,26 @@ The infrastructure is defined purely in CloudFormation templates. The defacto li
 ## Getting Started
 
 Easiest way to set up the infrastructure is via our automated provisioning platform. Please follow this [link](https://app.bitclouded.io/) to sign up and get started.
+
+## Hosted Assets
+
+Or altenatively you can find our hosted assets at following locations
+
+  - Templates: https://s3.eu-west-1.amazonaws.com/prod-glenfiddichbase-publicbucket-7hoy9fpv4hb3/glenlivet/prod/&lt;template-path&gt;.template where template-path is "&lt;folder&gt;/&lt;template-name&gt;"
+  - Lambdas: https://s3.&lt;region&gt;.amazonaws.com/glenfiddich-&lt;region&gt;/citrus-rind/prod/&lt;lambda-name&gt;.zip
+  - Docker Images: https://hub.docker.com/r/bitclouded
+  - AWS AMI:
+    - ap-northeast-1: ami-0f32c769
+    - ap-northeast-2: ami-0f459c61
+    - ap-south-1: ami-b06c16df
+    - ap-southeast-1: ami-31e57e52
+    - ap-southeast-2: ami-d00811b3
+    - ca-central-1: ami-99cb75fd
+    - eu-central-1: ami-a6f950c9
+    - eu-west-1: ami-f2ae588b
+    - eu-west-2: ami-2cedfc48
+    - sa-east-1: ami-0cc9bf60
+    - us-east-1: ami-b38ba6c8
+    - us-east-2: ami-4bb0902e
+    - us-west-1: ami-00ae8560
+    - us-west-2: ami-bd4fafc5

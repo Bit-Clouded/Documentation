@@ -14,7 +14,34 @@ The underlying network topology vaguely follows [AWS's set up here](http://docs.
 
 ## SSH Key Disabled
 
-All templates are default to be provisioned with no SSH private keys. By design, syslog and Docker logs are shipped to a central CloudWatch Log stream. SSM Agents are deployed to [cover the rest of the operational needs](https://aws.amazon.com/blogs/aws/manage-instances-at-scale-without-ssh-access-using-ec2-run-command/).
+All templates are default to be provisioned with no SSH private keys. This is achived using a default value of empty string:
+
+    Parameters:
+      KeyPairName:
+        Description: Name of an existing EC2 KeyPair to enable SSH access to the instances
+        Type: String
+        Default: ''
+
+In conjunction with conditional logic:
+
+    Conditions:
+      HasNoKeypair: !Equals 
+        - !Ref KeyPairName
+        - ''
+
+And
+
+    Resources:
+      SampleLaunchConfiguration:
+        Type: 'AWS::AutoScaling::LaunchConfiguration'
+        KeyName: !If 
+          - HasNoKeypair
+          - !Ref 'AWS::NoValue'
+          - !Ref KeyPairName
+
+By design, infrastructure should require minimal tempering and intervention. Syslog and Docker logs are shipped to a central CloudWatch Log stream. SSM Agents are deployed to [cover the rest of the operational needs](https://aws.amazon.com/blogs/aws/manage-instances-at-scale-without-ssh-access-using-ec2-run-command/).
+
+As an absolute last resort, templates can be updated with SSH keys in the parameters and rotate the servers to allow access.
 
 ## Containerised Application
 

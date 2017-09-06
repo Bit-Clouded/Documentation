@@ -2,5 +2,6 @@ site_name: BitClouded Infrastructure Framework
 pages:
   - Home: 'index.md'
   - Aspects:
-    - 'Security': 'aspects/security.md'
-    - 'Monitoring': 'aspects/monitoring.md'
+    - 'Security': 'pillars/security.md'
+    - 'Monitoring': 'pillars/monitoring.md'
+    - 'Operations': 'pillars/operations.md'
