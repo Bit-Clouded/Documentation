@@ -19,11 +19,17 @@ The SSM is baked in as part of the base image and all the appropriate permission
 
 ## Back Up and Restore
 
-All templates resources that acts as datastores has the deletion policy set to automatically retain data. The relevant templates also has snapshot parameter built in to automatically restore from it.
+All templates resources that acts as datastores has the deletion policy set to automatically retain data; retain or snapshot where appropriate. The relevant templates also has snapshot parameter built in to automatically restore from these snapshots.
 
-## Unique Naming
+## Easy Provisioning
 
-Resources have names, where possible, are generated on the fly in the format of StackName-LogicalId-RandomSuffix. This is to avoid resource name clashing when provisioning multiple instances of the same template.
+Resources have names, where possible, generated on the fly in the format of StackName-LogicalId-RandomSuffix. This is to avoid resource name clashing when provisioning multiple instances of the same template.
+
+Almost all of templates parameters are either derived from other template resources / parameters / outputs or are populated with sensible defaults. This is to reduce friction in provisioning new stacks.
+
+## Reliable Server Launching
+
+All autoscaling groups + launch configuration pairs have the appropraite creation and update policy. This is to ensure new servers launched have been bootstrapped correctly. The cfn-init framework is not installed on the server, but instead pulled in via a docker container.
 
 ## Future Roadmap
 

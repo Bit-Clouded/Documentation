@@ -64,3 +64,11 @@ Or altenatively you can find our hosted assets at following locations
     - us-east-2: ami-4bb0902e
     - us-west-1: ami-00ae8560
     - us-west-2: ami-bd4fafc5
+
+## Nitty Gritty Details
+
+There's no better way to document deep technical details than to comment it aloneside the infrastructure code. All the templates are in yaml format, and where appropriate comments are added.
+
+## More questions?
+
+Visit our Gitter channel [here](https://gitter.im/BitCloudedGlenlivet). And if it's something we've missed, it'd be added to the documentation.
