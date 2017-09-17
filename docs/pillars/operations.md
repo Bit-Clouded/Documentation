@@ -9,7 +9,7 @@ The framework aims to achieve as much immutability as possible by using Launch C
 Immutable infrastructure brings with it many advantages that are [very well understood](https://www.google.com.au/search?q=immutable+infrastructure)
 
   - Server as Cattles. Servers can easily be disposed of thanks to LC/ASG, and application can be reset by restarting Docker containers with AWS run command.
-  - Operational Indepencence. Gone are the days of relying on package managers to be reliably available when servers are being launched.
+  - Operational Indepencence. Gone are the days of relying on package managers (aptitude, yum, pip, gem, the list goes on) to be reliably available when servers are being launched.
   - Malleable and Extensible. AMI and Docker Images can be reliably rebaked and extended. Rolling out changes is also an extremely simple afair by updating CloudFormation AMI / Docker Image parameters.
   - Automated Change Tracking. All images can be run on CI platforms such as Jenkins or Bamboo, and all rollouts and deployments are tracked through CloudTrail and CloudConfig.
 
@@ -29,7 +29,14 @@ Almost all of templates parameters are either derived from other template resour
 
 ## Reliable Server Launching
 
-All autoscaling groups + launch configuration pairs have the appropraite creation and update policy. This is to ensure new servers launched have been bootstrapped correctly. The cfn-init framework is not installed on the server, but instead pulled in via a docker container.
+Servers are bootstrapped using only userdata and docker run commands. Everything is configured and baked as docker images and brought in as containers. Cfn-init is considered completely redundant and produce the following undesirable attributes:
+
+  - Increased launch time
+  - Decreased launch reliability
+  - Increased moving parts; linux package manager, python and cfn-init
+  - Not truly immutable servers as there's chance each servers are different.
+
+All autoscaling groups + launch configuration pairs have the appropraite creation and update policy. This is to ensure new servers launched have been bootstrapped correctly. In conjunction with unmutated servers and containers the servers can be truly considered immutable.
 
 ## Future Roadmap
 
