@@ -1,6 +1,6 @@
 # BitClouded Infrastructure Framework
 
-Throughout the entire process of building this framework, for me, the founder of the project, the hardest part was the documentation. Capturing what this framework is, and what it is for. Thing is, I didn't set out to create a product. The framework started out as a set of tools for my job. I like to do things well, and I can't in good conscience make my employer pay for the last 10% of quality that they don't need. Essentially:
+Throughout the entire process of building this framework, for me, the founder of the project, the hardest part was the documentation. Capturing what this framework is, and what it is for. Thing is, I didn't set out to create a product. The framework started out as a set of tools for my job. However, as the standard gets higher and higher, the cost keeps increasing. Put simply, a solution need to be found in delivery infrastructure of highest quality, effeciently and economically. Thus, the product is born.
 
     As an Infrastructure Engineer
 
